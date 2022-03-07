@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cheatsheet explaining CSS syntax for display and positioning</title>
+    
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Tag</th>
+                <th>Syntax</th>
+                <th>What does it do?</th>
+                <th>No but really, *what* does it do?</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>block</td>
+                <td>display: block;</td>
+                <td>adds line breaks above and below</td>
+                <td>generally speaking, arranges elements in a column</td>
+            </tr>
+            <tr>
+                <td>inline</td>
+                <td>display: inline;</td>
+                <td>does not add line breaks either above or below</td>
+                <td>use with extreme caution, especially if you want to align elements with specified margins, padding etc, because that info will be ignored, 9 times out of 10, it makes the aligned elements vanish</td>
+            </tr>
+            <tr>
+                <td>inline-block</td>
+                <td>display: inline-block;</td>
+                <td>adds a line break below an element only</td>
+                <td>generally speaking, arranges elements in a row. Where the elements have text, the right hand element's text will generally appear lower than you want it to. See position.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    
+    <section class="display">
+
+        <section class="container" id="inlineNEW">
+            <section class="inline-section1" id="inline-demo">
+                <section id="side-by-side" class="left-hand">
+                    <div>This one is easier to show with text than with blocks. Look how...<p>...THIS BIT HERE...</p>...behaves differently when you use inline, block or inline block</div>
+                </section>
+                <section id="side-by-side" class="right-hand">
+                    <div class="expo-par">
+                        And now let's have a little explanation about what's going on here...<br />
+                        Notice how for this example where no display setting is specified, it defaults to the same as using <em>block</em> in the example below
+                    </div>
+                </section>
+            </section>
+            <section class="inline-section2" id="inline-demo">
+                <section id="side-by-side" class="left-hand">
+                    <div>See this is what happens to... <p id="block-flag">...THIS BIT HERE...</p> ...when you do block display</div>
+                </section>
+                <section id="side-by-side" class="right-hand">
+                    <div class="expo-par">When you use <em>block</em>, line breaks are inserted before and after the element</div>
+                </section>
+            </section>
+            <section class="inline-section3" id="inline-demo">
+                <section id="side-by-side" class="left-hand">
+                    <div>Now look what happens to... <p id="inline-flag">...THIS BIT HERE...</p> ...when you do inline display but actually keep watching because it's THIS BIT HERE that does something different</div>
+                </section>
+                <section id="side-by-side" class="right-hand">
+                    <div class="expo-par">but when you use <em>inline</em> there is no line break when the text eventually goes onto the next line. And using inline also means that you cannot specify margins, or height, or width for that element</div>
+                </section>
+            </section>
+            <section class="inline-section4" id="inline-demo">
+                <section id="side-by-side" class="left-hand">
+                    <div>Then here's what happens to... <p id="inline-block-flag">...THIS BIT HERE...</p> ...when you do inline-block display and then same deal it's THIS BIT HERE that ends up lower down compared to inline</div>
+                </section>
+                <section id="side-by-side" class="right-hand">
+                    <div class="expo-par">but when you use <em>inline-block</em> you get a line break below and actually, if you compress the element, eg viewing in a mobile, you'll get a line break above, too</div>
+                </section>
+            </section>
+            <section class="inline-section5" id="inline-demo">
+                <section id="side-by-side" class="left-hand">
+                    <div>And finally what happens to... <p id="none-flag">...THIS BIT HERE...</p> ...when you do display: none</div>
+                </section>
+                <section id="side-by-side" class="right-hand">
+                    <div class="expo-par">And finally when you specify display as <em>none</em> that item is removed from the flow and hence disappears</div>
+                </section>
+            </section>
+        </section>
+    </section>   
+       
+
+</body>
+</html>
